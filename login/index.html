@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title></title>
+    <style>
+
+    </style>
+  </head>
+  <body id="body">
+    <!--login panda background-->
+    <img src="~/Desktop/home/panda.png">
+    <!--put two fields name and passward-->
+    <input type="text" placeholder="name" id="name"></input>
+    <input type="email" placeholder="email" id="email"></input>
+    <input type="text" placeholder="passaward" id="pass"></input>
+    <!--put submit button-->
+    <button id="button">submit</button>
+    <script>
+      //check name and passward when submit is pressed
+      document.getElementById("button").addEventListener("click",function(){
+        var name=document.getElementById("name").value;
+        var email=document.getElementById("email").value;
+        var pass=document.getElementById("pass").value;
+        if(name === "ryanyun"){
+          if(email === "ryanyun2010@gmail.com"){
+            if(pass === "ryan0411"){
+              var user="Ryan Yun(gmail)";
+              var u_email=email;
+              console.log(user);
+              document.getElementById("body").innerHTML="Hi "+user+"<br>";  
+              var catEl = document.createElement("iframe");
+              catEl.src = "ryan(gmail).html";
+              catEl.width="1000px";
+              catEl.height="1000px";
+              document.body.appendChild(catEl);
+            }
+          }
+          if(email === "ryany2021@careyschool.org"){
+            if(pass === "!638"){
+              var user="Ryan Yun(carey)";
+              var u_email=email;
+              console.log(user);
+              document.getElementById("body").innerHTML="Hi "+user+"<br>"
+              var catEl = document.createElement("iframe");
+              catEl.src = "ryan(carey).html";
+              catEl.width="1000px";
+              catEl.height="1000px";
+              document.body.appendChild(catEl);
+            }
+          }
+        }
+      })
+//if it is right then then return yes
+    </script> 
+  </body>
+</html>

@@ -1,0 +1,55 @@
+
+
+
+<html>
+<head>
+<script>
+function refresh(){
+var textcontent=document.getElementById("html").value;
+document.getElementById("iframe").srcdoc = textcontent;
+
+
+/*var code=document.getElementById("html").value;
+//find the <
+var allstart=[];
+var allend =[];
+for(var i =0;i<code.length;i++){
+if(code[i] === "<"){
+  allstart.push(i);
+}
+if(code[i] === ">"){
+allend.push(i);
+}
+}
+//console.log(code);
+//console.log(allstart);
+//console.log(allend);
+
+// make them a diffrent color
+for (var i =0;i<allstart.length;i++){
+//var el = "<span>"+code[allstart[i]]+"</span>";
+var el = document.createElement("span");
+el.textContent=code[allstart[i]];
+document.getElementById("html").style.color="yellow";
+
+}
+//make the stuff in between a diffrant color
+*/ 
+}
+</script>
+<style>
+textarea{
+width:100vw;
+height:600px;
+}
+iframe{
+width:100vw;
+height:1000px;
+}
+</style>
+</head>
+<body>
+<textarea id="html" onkeyup="refresh()"></textarea>
+<iframe id="iframe" ></iframe>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<img style="position:absolute"src="https://thumbs.dreamstime.com/z/giant-panda-eating-bamboo-27449708.jpg" alt="" width="200px" id="img">
+<img style="position:absolute; left:300px"src="https://thumbs.dreamstime.com/z/giant-panda-eating-bamboo-27449708.jpg" alt="" width="200px" id="img2">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+
+</script>
+<script>
+$(document).ready(function(){
+$("#img").click(function(){
+for(let i=0;i<10;i++){
+$("img").animate({width:'200px', opacity:'1'},'slow');
+$("img").animate({width:'400px' ,opacity:'0.2'},'slow');
+$("img2").animate({width:'200px', opacity:'1'},'slow');
+$("img2").animate({width:'400px' ,opacity:'0.2'},'slow');
+
+}
+
+});
+$("#img2").click(function(){
+for(let i=0;i<10;i++){
+$("img").animate({width:'200px', opacity:'1'},'slow');
+$("img").animate({width:'400px' ,opacity:'0.2'},'slow');
+$("img2").animate({width:'200px', opacity:'1'},'slow');
+$("img2").animate({width:'400px' ,opacity:'0.2'},'slow');
+
+}
+
+});
+});
+</script>
+</body>
+
+</html>
