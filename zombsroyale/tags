@@ -1,0 +1,79 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Bar	zombs.js	/^function Bar(){$/;"	c
+Bar.draw	zombs.js	/^    this.draw=function(){$/;"	m
+Bar.move	zombs.js	/^    this.move=function(){$/;"	m
+Building	zombs.js	/^function Building() {$/;"	c
+Building.draw	zombs.js	/^	this.draw = function() {$/;"	m
+Building.move	zombs.js	/^	this.move = function () {$/;"	m
+Bush	zombs.js	/^function Bush() {$/;"	c
+Bush.draw	zombs.js	/^	this.draw = function() {$/;"	m
+Bush.move	zombs.js	/^	this.move = function () {$/;"	m
+Character	zombs.js	/^function Character(){$/;"	c
+Character.direction.theta	zombs.js	/^    this.direction = { x: 0, y: 0, theta: 0 }$/;"	p
+Character.direction.x	zombs.js	/^    this.direction = { x: 0, y: 0, theta: 0 }$/;"	p
+Character.direction.y	zombs.js	/^    this.direction = { x: 0, y: 0, theta: 0 }$/;"	p
+Character.draw	zombs.js	/^   this.draw = function() {$/;"	m
+Character.draw.rotateCircle	zombs.js	/^     function rotateCircle(px, py, radius) {$/;"	f
+Character.move	zombs.js	/^    this.move = function () {$/;"	m
+Character.rotate	zombs.js	/^    this.rotate = function(mouseX,mouseY) {$/;"	m
+Crate	zombs.js	/^function Crate() {$/;"	c
+Crate.draw	zombs.js	/^	this.draw = function() {$/;"	m
+Crate.move	zombs.js	/^	this.move = function () {$/;"	m
+INVENTORYBAR	zombs.js	/^function INVENTORYBAR(){$/;"	c
+INVENTORYBAR.draw	zombs.js	/^    this.draw=function(){$/;"	m
+INVENTORYBAR.move	zombs.js	/^    this.move=function(){}$/;"	m
+INVENTORYITEM	zombs.js	/^function INVENTORYITEM(image,number,item){$/;"	c
+INVENTORYITEM.draw	zombs.js	/^    this.draw=function(){$/;"	m
+Med	zombs.js	/^function Med() {$/;"	c
+Med.draw	zombs.js	/^	this.draw = function() {$/;"	m
+Med.move	zombs.js	/^	this.move = function () {$/;"	m
+Score	zombs.js	/^function Score(x){$/;"	c
+Weapon	zombs.js	/^function Weapon(options) {$/;"	c
+Weapon.draw	zombs.js	/^	this.draw = function(cx, cy, cr, angle) {$/;"	m
+Weapon.velocity.x	zombs.js	/^		x: 0, y: 0$/;"	p
+Weapon.velocity.y	zombs.js	/^		x: 0, y: 0$/;"	p
+WeaponCrate	zombs.js	/^function WeaponCrate() {$/;"	c
+WeaponCrate.draw	zombs.js	/^	this.draw = function() {$/;"	m
+WeaponCrate.move	zombs.js	/^	this.move = function () {$/;"	m
+World	zombs.js	/^function World() {$/;"	c
+World.draw	zombs.js	/^    this.draw = function(){$/;"	m
+World.move	zombs.js	/^    this.move = function(){$/;"	m
+World.velocity.x	zombs.js	/^        x:0,$/;"	p
+World.velocity.y	zombs.js	/^        y:0$/;"	p
+absdiff	zombs.js	/^function absdiff(x,y){$/;"	f
+animate	zombs.js	/^function animate() {$/;"	f
+buildings	zombs.js	/^var buildings=[];$/;"	v
+bushes	zombs.js	/^var bushes = [];$/;"	v
+canvas	zombs.js	/^var canvas = document.querySelector('canvas');$/;"	v
+changeDirection	zombs.js	/^function changeDirection(key) {$/;"	f
+console	zombs.js	/^    console.log(x)$/;"	m
+console.Score.move	zombs.js	/^	this.move=function(){}$/;"	m
+crates	zombs.js	/^var crates=[];$/;"	v
+distancex	zombs.js	/^var distancex=0.1;$/;"	v
+distancey	zombs.js	/^var distancey=0.2;$/;"	v
+doHitBoxesCollide	zombs.js	/^function doHitBoxesCollide(box1, box2) {$/;"	f
+g	zombs.js	/^var g=1;$/;"	v
+gottonshield	zombs.js	/^var gottonshield=false;$/;"	v
+gottonweaponbamboo	zombs.js	/^var gottonweaponbamboo=false;$/;"	v
+gottonweaponbamboogun	zombs.js	/^var gottonweaponbamboogun=false;$/;"	v
+kits	zombs.js	/^var kits=[];$/;"	v
+let	zombs.js	/^let id = function (id) {$/;"	f
+loadResources	zombs.js	/^function loadResources() {$/;"	f
+move	zombs.js	/^	this.move=function(){}$/;"	f
+moveCharacter	zombs.js	/^function moveCharacter(e) {$/;"	f
+resizeCanvas	zombs.js	/^function resizeCanvas() {$/;"	f
+resources	zombs.js	/^var resources=[gameWorld,panda,bamboo,bamboogun].concat(crates);$/;"	v
+rotate	zombs.js	/^function rotate(e) {$/;"	f
+startGame	zombs.js	/^function startGame() {$/;"	f
+stopCharacter	zombs.js	/^function stopCharacter(e) {$/;"	f
+test	zombs.js	/^var test=0;$/;"	v
+throw	zombs.js	/^	this.throw=function(){$/;"	c
+tile	zombs.js	/^var tile='https:\/\/ryan1.wisen.space\/capture\/load\/uNqbBknOrI5cDJlxfTJI3tze.png'$/;"	v
+tools	zombs.js	/^var tools = canvas.getContext('2d');$/;"	v
+xoffset	zombs.js	/^var xoffset=0.39;$/;"	v
+yoffset	zombs.js	/^var yoffset=-0.3;$/;"	v

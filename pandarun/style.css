@@ -1,0 +1,19 @@
+
+body{
+	overflow:hidden;
+}
+#back{ 
+	width:100vw; 
+	height:100vh; 
+	z-index:0;
+	color:rgba(0,0,0,1)
+}
+#score{
+	color:white;
+	background-color:darkgrey;
+	display:inline;
+	padding:4px;
+	position:absolute;
+	font-size:2rem;
+	top:5px;
+}

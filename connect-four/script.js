@@ -55,6 +55,24 @@ let makeimgslider4=function(){
     slides[3].style.display="block";
   })
 }
+let chktie = function(board){
+	let tmp=0
+	for(let i=0;i<board.length;i++){
+		for(let j=0;j<board[i].length;j++){
+			if(board[i][j] > 0){
+				tmp++;
+				console.log(tmp);
+				if(tmp===49){
+					return 1;
+				}
+			}
+		}
+	}
+}
+let how_to_play=id("howtoplay");
+id("howtob").addEventListener("click",function(){
+ how_to_play.style.display="block";
+})
 var c=id("game");
 var draw=c.getContext("2d");
 draw.moveTo(60,200)
@@ -91,10 +109,13 @@ function chkWinner(bd_wrong) {
     for (r = 0; r < 4; r++){
         for (c = 0; c < 7; c++){
             if (chkLine(bd[r][c], bd[r+1][c], bd[r+2][c], bd[r+3][c])){
-                hiwin(bd,r,c);
-                hiwin(bd,r+1,c);
-                hiwin(bd,r+2,c);
-                hiwin(bd,r+3,c);
+                console.log(r+" "+c);
+								draw.fillStyle="#ffff00"
+							console.log(r+" "+c+":"+(r+1)+" "+c+":"+(r+2)+" "+c+":"+(r+3)+" "+c)
+								draw.fillRect(c*60+60,200+(r*50),60,50)
+								draw.fillRect(c*60+60,200+((r+1)*50),60,50)
+								draw.fillRect(c*60+60,200+((r+2)*50),60,50)
+								draw.fillRect(c*60+60,200+((r+3)*50),60,50)
                 return bd[r][c];
             }
         }
@@ -103,131 +124,227 @@ function chkWinner(bd_wrong) {
     for (r = 0; r < 7; r++){
         for (c = 0; c < 4; c++){
             if (chkLine(bd[r][c], bd[r][c+1], bd[r][c+2], bd[r][c+3])){
-                hiwin(bd,r,c);
-                hiwin(bd,r,c+1);
-                hiwin(bd,r,c+2);
-                hiwin(bd,r,c+3);
+							draw.fillStyle="#ffff00"
+								draw.fillRect(c*60+60,200+r*50,60,50)
+								draw.fillRect((c+1)*60+60,200+r*50,60,50)
+								draw.fillRect((c+2)*60+60,200+r*50,60,50)
+								draw.fillRect((c+3)*60+60,200+r*50,60,50)
+							draw.stroke()
                 return bd[r][c];
+
             }
         }
     }
     // Check down-right
     for (r = 0; r < 4; r++){
         for (c = 0; c < 4; c++){
-          if(r===3){
-                console.log("r3 . "+bd[r][c]+":"+bd[r+1][c+1]+":"+bd[r+2][c+2]+":"+bd[r+3][c+3])
-              }
             if (chkLine(bd[r][c], bd[r+1][c+1], bd[r+2][c+2], bd[r+3][c+3])){
-             hiwin(bd,r,c);
-             hiwin(bd,r+1,c+1);
-             hiwin(bd,r+2,c+2);
-             hiwin(bd,r+3,c+3);
+							draw.fillStyle="#ffff00"
+							draw.fillRect(c*60+60,200+r*50,60,50)
+							draw.fillRect((c+1)*60+60,200+(r+1)*50,60,50)
+							draw.fillRect((c+2)*60+60,200+(r+2)*50,60,50)
+							draw.fillRect((c+3)*60+60,200+(r+3)*50,60,50)
+							draw.stroke()
              return bd[r][c];
-            }
+
         }
+            }
     }
     // Check down-left
     for (r = 4; r < 7; r++){
         for (c = 0; c < 4; c++){
             if (chkLine(bd[r][c], bd[r-1][c+1], bd[r-2][c+2], bd[r-3][c+3])){
-            hiwin(bd,r,c);
-            hiwin(bd,r-1,c-1);
-            hiwin(bd,r-2,c-2);
-            hiwin(bd,r-3,c-3);
-                return bd[r][c];
+							draw.fillStyle="#ffff00"
+							draw.fillRect(c*60+60,200+r*50,60,50)
+							draw.fillRect((c+1)*60+60,200+(r-1)*50,60,50)
+							draw.fillRect((c+2)*60+60,200+(r-2)*50,60,50)
+							draw.fillRect((c+3)*60+60,200+(r-3)*50,60,50)
+							draw.stroke()
+							return bd[r][c];
+
             }
         }
     }
     return 0;
 }
-/*left:37
-  right:39
-  down:40
-*/
-document.addEventListener("onkeydown",function(e){
+let xh=68;
 let xc=0;
-let keycode=e.charCode;
-let charcode=keycode.fromCharCode()
-console.log(keycode+" pressed")
-  if(e.keycode===37){
-    if(xc===0){}
-    else{
-      xc--;
-      draw.fillStyle = "#ffffff";
-      //console.log("work")
-      draw.fillRect(xc*60+60+1,500-y*50+1,58,48);
-      if(winnert===0){
-        let y=0;
-        for(let i =0;i<7;i++){
-          if(board[i][x]===0){
-            break;
-          }else{
-            y++;
-          }
-        }
-      }
-      if(turn===1){
-        draw.fillStyle = "#00ffff";
-        //console.log("work")
-        draw.fillRect(xc*60+60+1,500-y*50+1,58,48);
-      }
-      if(turn===2){
-        draw.fillStyle = "#ff0000";
-        //console.log("work")
-        draw.fillRect(xc*60+60+1,500-y*50+1,58,48);
-      }
-    }
+let turn=1;
+id("trans-blue").style.backgroundColor  = "rgba(0,255,255,0.9)";
+id("trans-red").style.backgroundColor  = "rgba(255,0,0,0.9)";
+let transBlue=id("trans-blue");
+let transRed=id("trans-red");
+transRed.style.display="none";
+document.addEventListener("keydown",function(e){
+	let keycode=e.keyCode;
+	console.log(keycode);
+	let hicol=id("rect");
+	console.log(xc+" col");
+	if(keycode===39){
+		if(xc===6){}else{
+			xc++;
+			xh+=60;
+			console.log(xh)
+			
+  		let y=0;
+  		for(let i =0;i<7;i++){
+    		if(board[i][xc]===0){
+     			 break;
+    		}else{
+      		y++;
+				}
+    	}
+			if(y<7){
+				console.log(y+" "+turn+" "+xh)
+				if(turn===1){
+					transRed.style.display="none"
+					transBlue.style.display="block"
+					transBlue.style.left=0+"px";
+					transBlue.style.top=300-y*50+"px";
+				}else{
+					transBlue.style.display="none"
+					transRed.style.display="block";
+					transRed.style.left=0+"px";
+					transRed.style.top=300-y*50+"px";
+				}
+			}
+			hicol.style.left=xh+"px";
   }
-  if(e.keycode===39){
-    if(xc===6){
-      xc++;
-      draw.fillStyle = "#ffffff";
-      //console.log("work")
-      draw.fillRect(xc*60+60+1,500-y*50+1,58,48);
-    }else{
-      if(winnert===0){
-        let y=0;
-        for(let i =0;i<7;i++){
-          if(board[i][x]===0){
-            break;
-          }else{
-            y++;
-          }
-        }
-      }
-      if(turn===1){
-        draw.fillStyle = "#00ffff";
-        //console.log("work")
-        draw.fillRect(xc*60+60+1,500-y*50+1,58,48);
-      }
-      if(turn===2){
-        draw.fillStyle = "#ff0000";
-        //console.log("work")
-        draw.fillRect(xc*60+60+1,500-y*50+1,58,48);
-      }
-    }
-  }
-  if(e.keycode===40){
-    board[y][xc]=turn;
-    if(turn===1){
-    turn=2;
-    }
-    else{
-    turn=1
-    }
-  }
+		
+	}else if(keycode===37){
+		if(xc===0){}else{
+			xc--;
+			xh-=60;
+  		let y=0;
+  		for(let i =0;i<7;i++){
+    		if(board[i][xc]===0){
+     			 break;
+    		}else{
+      		y++;
+				}
+    	}
+			if(y<7){
+			console.log(y+" "+turn+" "+xh)
+			if(turn===1){
+				transRed.style.display="none"
+				transBlue.style.display="block"
+				transBlue.style.left=0+"px";
+				transBlue.style.top=300-y*50+"px";
+			}else{
+				transBlue.style.display="none"
+				transRed.style.display="block";
+				transRed.style.left=0+"px";
+				transRed.style.top=300-y*50+"px";
+			}
+			}
+			hicol.style.left=xh+"px";
+		}
+	}else if(keycode===13){
+		if(xc===7){}else{
+			change(xc);
+			if(turn===1){
+				turn=2
+			}else{
+				turn=1
+			}
+		}
+  		let y=0;
+  		for(let i =0;i<7;i++){
+    		if(board[i][xc]===0){
+     			 break;
+    		}else{
+      		y++;
+				}
+    	}
+			if(y<7){
+			console.log(y+" "+turn+" "+xh)
+			if(turn===1){
+				transRed.style.display="none"
+				transBlue.style.display="block"
+				transBlue.style.left=0+"px";
+				transBlue.style.top=300-y*50+"px";
+			}else{
+				transBlue.style.display="none"
+				transRed.style.display="block";
+				transRed.style.left=0+"px";
+				transRed.style.top=300-y*50+"px";
+			}
+			}
+		if(chktie(board)===1){
+			id("p3").style.display="block";	
+		}
+	}
+	// hicol.style.position="absolute";
+	// hicol.style.left="70px";
+	// hicol.style.top="210px";
+  //if(e.keycode===37){
+  //  if(xc===0){}
+  //  else{
+  //    xc--;
+  //    draw.fillStyle = "#ffffff";
+  //    //console.log("work")
+  //    draw.fillRect(xc*60+60+1,500-y*50+1,58,48);
+  //    if(winnert===0){
+  //      let y=0;
+  //      for(let i =0;i<7;i++){
+  //        if(board[i][x]===0){
+  //          break;
+  //        }else{
+  //          y++;
+  //        }
+  //      }
+  //    }
+  //    if(turn===1){
+  //      draw.fillStyle = "#00ffff";
+  //      //console.log("work")
+  //      draw.fillRect(xc*60+60+1,500-y*50+1,58,48);
+  //    }
+  //    if(turn===2){
+  //      draw.fillStyle = "#ff0000";
+  //      //console.log("work")
+  //      draw.fillRect(xc*60+60+1,500-y*50+1,58,48);
+  //    }
+  //  }
+  //}
+  //if(e.keycode===39){
+  //  if(xc===6){
+  //    xc++;
+  //    draw.fillStyle = "#ffffff";
+  //    //console.log("work")
+  //    draw.fillRect(xc*60+60+1,500-y*50+1,58,48);
+  //  }else{
+  //    if(winnert===0){
+  //      let y=0;
+  //      for(let i =0;i<7;i++){
+  //        if(board[i][x]===0){
+  //          break;
+  //        }else{
+  //          y++;
+  //        }
+  //      }
+  //    }
+  //    if(turn===1){
+  //      draw.fillStyle = "#00ffff";
+  //      //console.log("work")
+  //      draw.fillRect(xc*60+60+1,500-y*50+1,58,48);
+  //    }
+  //    if(turn===2){
+  //      draw.fillStyle = "#ff0000";
+  //      //console.log("work")
+  //      draw.fillRect(xc*60+60+1,500-y*50+1,58,48);
+  //    }
+  //  }
+  //}
+  //if(e.keycode===40){
+  //  board[y][xc]=turn;
+  //  if(turn===1){
+  //  turn=2;
+  //  }
+  //  else{
+  //  turn=1
+  //  }
+  //}
 })
-let hiwin=function(bd,r,c){
-   draw.fillStyle = "#ffff00";
-    //console.log("work")
-    draw.fillRect(c*60+60+1,220+r*50+1,58,30);
-    draw.moveTo(c*60+60+1,200+r*50+1);
-    draw.lineTo(c*60+60+1,200+r*50+1+48);
-    draw.lineTo(c*60+60+1+58,200+r*50+1+48);
-    draw.lineTo(c*60+60+1+58,200+r*50+1);
-    draw.lineTo(c*60+60+1,200+r*50+1);
-draw.stroke()
-}
 let change =function(x){
  if(winnert===0){
   let y=0;
@@ -266,6 +383,7 @@ let change =function(x){
     num=1;
     winner(y+1,x-1);
     */
+
   board[y][x]=turn;
   if(turn===1){
      draw.fillStyle = "#00ffff";
@@ -287,6 +405,7 @@ let change =function(x){
     winnert=1;
   }
    }
-  }
+  
+ }
 }
 newBoard();

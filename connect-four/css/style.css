@@ -1,0 +1,23 @@
+#rect{
+	background-color:yellow;
+	height:349;
+	width:60px;
+	position:absolute;
+	top:208px;
+	left:68px;
+	opacity:0.2;
+	z-index:-1
+}
+#trans-blue{
+	height:50px;
+	width:60px;
+	position: absolute;
+	left:0px;
+	top:300px;
+}#trans-red{
+	height:50px;
+	width:60px;
+	position:absolute;
+	left:0px;
+	top:300px;
+}

@@ -1,20 +1,40 @@
 <html>
 	<head>
 		<title></title>
+		<link href="css/style.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
-		<canvas id="game" width="600px" height="550px"></canvas>
+				<canvas id="game" width="600px" height="550px"></canvas>
+		<h1 style="position:absolute;top:0px">CONNECT FOUR</h1>
 
 		<br>
-		<button id="1" style="position:absolute;left:90px">1</button>
-		<button id="2" style="position:absolute;left:152px">2</button>
-		<button id="3" style="position:absolute;left:212px">3</button>
-		<button id="4" style="position:absolute;left:272px">4</button>
-		<button id="5" style="position:absolute;left:332px">5</button>
-		<button id="6" style="position:absolute;left:392px">6</button>
-		<button id="7" style="position:absolute;left:452px">7</button>
-		<p id="p1" style="position:absolute;top:200px;left:90px;display:none;font-size:50px;color:rgb(80,80,80)">The winner is blue</p>
-		<p id="p2" style="position:absolute;top:200px;left:90px;display:none;font-size:50px;color:rgb(80,80,80)">The winner is red</p>
+		<button id="howtob">How to play</button>
+		<br>
+		<p id="howtoplay" style="display:none">Use arrow keys to move highlighted coloumn.Enter to drop</p>
+		<br>
+		<a href="https://docs.google.com/forms/d/e/1FAIpQLScy1ucR8cG9Hewiu3n0RzvVylkoqi4rAvSri8yO5-yhirmEEA/viewform?usp=sf_link">Comment Here</a>
+
+		<!-- <button id="1" style="position:absolute;left:90px">1</button> -->
+		<!-- <button id="2" style="position:absolute;left:152px">2</button> -->
+		<!-- <button id="3" style="position:absolute;left:212px">3</button> -->
+		<!-- <button id="4" style="position:absolute;left:272px">4</button> -->
+		<!-- <button id="5" style="position:absolute;left:332px">5</button> -->
+		<!-- <button id="6" style="position:absolute;left:392px">6</button> -->
+		<!-- <button id="7" style="position:absolute;left:452px">7</button> -->
+		<p id="p1" style="position:absolute;top:100px;left:90px;display:none;font-size:50px;color:rgb(0,255,255)">The winner is BLUE</p>
+		<p id="p2" style="position:absolute;top:100px;left:90px;display:none;font-size:50px;color:rgb(255,000,0)">The winner is RED</p>
+		<p id="p3" style="position:absolute;top:100px;left:90px;display:none;font-size:50px;color:rgb(000,000,0)">TIE GAME</p>
+			<div id="rect">
+				<p></p>	
+			<div>
+			<div id="trans-blue">
+				<p>
+				</p>
+			</div>
+			<div id="trans-red">
+				<p>
+			</p>
+			</div>
 		<script src="script.js"></script>
 	</body>
 </html>
